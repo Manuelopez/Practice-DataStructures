@@ -1,0 +1,13 @@
+/home/manuelopez/Documents/automate/csharp/LeetArray/bin/Debug/netcoreapp3.1/LeetArray
+/home/manuelopez/Documents/automate/csharp/LeetArray/bin/Debug/netcoreapp3.1/LeetArray.deps.json
+/home/manuelopez/Documents/automate/csharp/LeetArray/bin/Debug/netcoreapp3.1/LeetArray.runtimeconfig.json
+/home/manuelopez/Documents/automate/csharp/LeetArray/bin/Debug/netcoreapp3.1/LeetArray.runtimeconfig.dev.json
+/home/manuelopez/Documents/automate/csharp/LeetArray/bin/Debug/netcoreapp3.1/LeetArray.dll
+/home/manuelopez/Documents/automate/csharp/LeetArray/bin/Debug/netcoreapp3.1/LeetArray.pdb
+/home/manuelopez/Documents/automate/csharp/LeetArray/obj/Debug/netcoreapp3.1/LeetArray.csprojAssemblyReference.cache
+/home/manuelopez/Documents/automate/csharp/LeetArray/obj/Debug/netcoreapp3.1/LeetArray.AssemblyInfoInputs.cache
+/home/manuelopez/Documents/automate/csharp/LeetArray/obj/Debug/netcoreapp3.1/LeetArray.AssemblyInfo.cs
+/home/manuelopez/Documents/automate/csharp/LeetArray/obj/Debug/netcoreapp3.1/LeetArray.csproj.CoreCompileInputs.cache
+/home/manuelopez/Documents/automate/csharp/LeetArray/obj/Debug/netcoreapp3.1/LeetArray.dll
+/home/manuelopez/Documents/automate/csharp/LeetArray/obj/Debug/netcoreapp3.1/LeetArray.pdb
+/home/manuelopez/Documents/automate/csharp/LeetArray/obj/Debug/netcoreapp3.1/LeetArray.genruntimeconfig.cache
