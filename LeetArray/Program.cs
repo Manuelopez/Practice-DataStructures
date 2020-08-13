@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+
 
 namespace LeetArray
 {
@@ -6,17 +8,193 @@ namespace LeetArray
   {
     static void Main(string[] args)
     {
-      int[] nums1 = new int[] { 0 };
-      int[] nums2 = new int[15];
+      int[] nums1 = new int[] { -4, -1, 0, 3, 10 };
+      SortArrayByParity(nums1);
+      Console.WriteLine(string.Join("  ", nums1));
+    }
+
+    public static int[] SortedSquares(int[] A)
+    {
+      if (A == null || A.Length == 0) return null;
+
+      int left = 0;
+      int right = A.Length - 1;
+      int index = A.Length - 1;
+      while (left < right)
+      {
+        if (Math.Abs(A[left]) < Math.Abs(A[right]))
+        {
+          A[index] = A[right] * A[right];
+          right--;
+        }
+        else
+        {
+          A[index] = A[left] * A[left];
+          left++;
+        }
+        index--;
+      }
 
 
-      // Merge(nums1, nums1.Length, nums2, nums2.Length);
-      // Console.WriteLine(string.Join("\n", nums1));
-      Console.WriteLine(nums2.Length);
 
+      return A;
+    }
+
+    public static int[] SortArrayByParity(int[] A)
+    {
+      int fast = 0, slow = 0;
+      while (fast < A.Length)
+      {
+        if (A[fast] % 2 == 0)
+        {
+          int temp = A[slow];
+          A[slow] = A[fast];
+          A[fast] = temp;
+        }
+        if (A[slow] % 2 == 0) { slow++; }
+
+        fast++;
+      }
+      return A;
+    }
+
+    public static void MoveZeroes(int[] nums)
+    {
+      int fast = 0, slow = 0;
+      while (fast < nums.Length)
+      {
+
+        if (nums[fast] != 0)
+        {
+          int temp = nums[slow];
+          nums[slow] = nums[fast];
+          nums[fast] = temp;
+        }
+        if (nums[slow] != 0) { slow++; }
+
+
+        fast++;
+      }
+    }
+    public static int[] ReplaceElements(int[] arr)
+    {
+
+      int max = -1;
+      int a = 0;
+      for (int index = arr.Length - 1; index >= 0; index--)
+      {
+        a = arr[index];
+        arr[index] = max;
+        if (max < a) max = a;
+      }
+
+
+      return arr;
+    }
+
+
+    public static bool ValidMountainArray(int[] A)
+    {
+      if (A.Length <= 2) return false;
+      int i = 0;
+      int j = A.Length - 1;
+      while (i < j)
+      {
+        if (A[i + 1] > A[i]) i++;
+        else if (A[j - 1] > A[j]) j--;
+        else break;
+      }
+      return i != 0 && j != A.Length - 1 && i == j;
+    }
+
+    public static bool CheckIfExistSet(int[] arr)
+    {
+      HashSet<int> numbers = new HashSet<int>();
+      foreach (int a in arr)
+      {
+        if (numbers.Contains(a * 2) || (a % 2 == 0 && numbers.Contains(a / 2))) return true;
+        numbers.Add(a);
+      }
+      return false;
+    }
+
+    public static bool CheckIfExist(int[] arr)
+    {
+      if (arr.Length < 2 || arr.Length > 500) return false;
+      for (int x = 0; x < arr.Length; x++)
+      {
+        for (int j = x + 1; j < arr.Length; j++)
+        {
+          if (arr[x] == 2 * arr[j] || arr[j] == 2 * arr[x])
+          {
+            return true;
+          }
+        }
+      }
+      return false;
+    }
+    public static void MergeSorted(int[] nums1, int m, int[] nums2, int n)
+    {
+      int i = 0, j = 0, k = 0;
+      while (i < nums1.Length && j < nums2.Length)
+      {
+        if (nums2[j] < nums1[j])
+        {
+          nums1[k] = nums2[j];
+        }
+      }
 
 
     }
+
+    public static int RemoveDuplicates(int[] nums)
+    {
+      int length = 1;
+      for (int index = 1; index < nums.Length; index++)
+      {
+        if (nums[index - 1] != nums[index])
+        {
+          nums[length] = nums[index];
+          length++;
+        }
+      }
+
+
+      return length;
+    }
+
+    public static int RemoveElement(int[] nums, int val)
+    {
+      int length = nums.Length;
+      for (int x = nums.Length - 1; x >= 0; x--)
+      {
+        if (nums[x] == val)
+        {
+
+          ShiftLeft(nums, x);
+          length--;
+        }
+
+
+      }
+
+
+      return length;
+    }
+
+    public static void ShiftLeft(int[] nums, int position)
+    {
+      if (position != nums.Length - 1)
+      {
+        for (int i = position + 1; i < nums.Length; i++)
+        {
+          // Shift each element one position to the left
+          nums[i - 1] = nums[i];
+        }
+
+      }
+    }
+
 
     public static void Merge(int[] nums1, int m, int[] nums2, int n)
     {
